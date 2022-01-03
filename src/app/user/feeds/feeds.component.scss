@@ -1,0 +1,129 @@
+.card-start{
+    border: 1px solid #e0e0e5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.card-header{
+    background-color: #fff;
+}
+
+.card-action{
+    background-color: #f5f5f5;
+}
+
+.action-btn{
+    padding: 0px 120px 0px 0px;
+    margin: 0px 15px 0 10px;
+}
+
+.example-card {
+    max-width: 500px;
+    margin: 35px 30px 35px 30px;
+  }
+  
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .post-option{
+      float: right;
+  }
+
+
+  ::ng-deep .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+  }
+  
+  ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+  }
+  
+// .example-button-row {
+//     display: table-cell;
+//     width: 490px;
+//   }
+  
+
+// .example-button-row .mat-button-base {
+//     margin: 8px 8px 8px 0;
+//   }
+  
+.h7 {
+    font-size: 0.8rem;
+    
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+    
+}
+
+.comment-section{
+    margin: 2px;
+
+    display: flex;
+}
+
+.comment-btn{
+    // padding: 2px 4px 0px 8px;
+    align-self: center;
+}
+
+.comment-text{}
+
+.btn-radius{
+
+    border-radius: 20px;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    
+    content: none;
+    display: none;
+}
+
+
+// .mat-form-field {
+//     margin: 40px 0;
+//     width: 500px !important;
+// }
+
+// .mat-toolbar-single-row {
+//     height: auto !important;
+//     background: transparent;
+// }
+
+// .mat-toolbar-single-row button {
+//     width: 200px;
+// }
+
+// .mat-form-field {
+//     width: 100%;
+// }
+
+#uploadFile {
+    top: 0px;
+    left: 0px;
+    width: 100%;    
+    z-index: 9;
+    opacity: 0;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+}

@@ -1,0 +1,239 @@
+  <mat-tab-group>
+    <mat-tab label="Make a publication">
+      <mat-card class="card-start btn-radius">
+        <!-- <mat-card-header>
+            <mat-card-title>Card Data</mat-card-title>
+        </mat-card-header> -->
+        <mat-card-content>
+            <div fxFlex="100" class="px-1">
+              <!-- <form [formGroup]="feedsForm"> -->
+                <mat-form-field appearance="outline" class="w-100">
+                    <input matInput   [(ngModel)]="postData"   placeholder="What are you thinking?">
+                </mat-form-field>
+
+                <div class="">
+                    <button (click)="newPost()" mat-raised-button color="primary" class="btn-radius">Post</button>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="" class="post-option">
+                        <mat-icon>public</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                          <mat-icon>public</mat-icon>
+                          <span>Public</span>
+                        </button>
+                        <button mat-menu-item>
+                          <mat-icon>group</mat-icon>
+                          <span>Friends</span>
+                        </button>
+                        <button mat-menu-item>
+                          <mat-icon>notifications_off</mat-icon>
+                          <span>Just me</span>
+                        </button>
+                      </mat-menu>
+                </div>    
+              <!-- </form> -->
+            </div> 
+         
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card-start btn-radius" *ngFor="let post of postList; let i = index">
+        <mat-card-header class="card-header">
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{post.user.name}} {{post.user.lastName}}</mat-card-title>
+          <mat-card-subtitle>@{{post.user.userName}}</mat-card-subtitle>
+
+          <div class="post-option">
+            <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="" >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu1="matMenu">
+              <button mat-menu-item>
+                <span>Save</span>
+              </button>
+              <button mat-menu-item disabled>
+                <span>Hide</span>
+              </button>
+              <button mat-menu-item>
+                <span>Report</span>
+              </button>
+            </mat-menu>
+          </div>
+
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        <mat-card-content>
+          <p>
+            {{post.text}}.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="card-action"> 
+              <button mat-icon-button color="warn" class="action-btn"><mat-icon>favorite</mat-icon>LIKE</button>
+              <button mat-icon-button color="basic" class="action-btn"><mat-icon>share</mat-icon>SHARE</button>
+              
+                <div class="comment-section">
+                  <!-- <div class="comment-text"> -->
+                    <mat-form-field appearance="legacy" class="w-100 ">
+                      <mat-label>Write a comment...</mat-label>
+                      <input matInput #myComment>
+                      </mat-form-field>
+                  <!-- </div> -->
+                 <button mat-raised-button color="primary" (click)="postComment(i,post._id,myComment)" class="comment-btn btn-radius">Post</button>
+                </div>
+
+
+                <mat-card class="card-start btn-radius">
+                  <!-- <mat-card-content> -->
+                    <!-- <mat-card class="card-start"> -->
+
+                 <a mat-flat-button  (click)="toggleShow(i,post._id)" class="btn-radius" >Load comments...</a>
+
+                      <!-- <button (click)="toggleShow()" type="checkbox" >Load more comments...</button> -->
+
+                      <div *ngIf="post.isLoadComment" class="row container-fluid"  id="divshow" >
+                       <div *ngFor="let commentsLoop of post.commentData">
+
+                      
+                      <mat-card-header class="card-header" >
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <!-- <mat-card-title>Poly Gon</mat-card-title> -->
+                        <mat-card-subtitle>@{{commentsLoop.user.userName}}</mat-card-subtitle>            
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          {{commentsLoop.comment}}
+                       
+                        </p>
+                      </mat-card-content>
+                      
+                    </div>
+                      </div>
+                     
+                      
+                    <!-- </mat-card> -->
+                  <!-- </mat-card-content> -->
+                </mat-card>
+                
+                
+        </mat-card-actions>
+      </mat-card>
+
+    </mat-tab>
+
+    
+
+
+    <mat-tab label="Image">
+      <mat-card class="card-start btn-radius">
+        <!-- <mat-card-header>
+            <mat-card-title>Card Data</mat-card-title>
+        </mat-card-header> -->
+        <mat-card-content>
+            <div fxFlex="100" class="px-1">
+
+              <mat-form-field appearance="outline" class="w-100 ">
+                <div>
+                  <mat-toolbar>
+                    <!-- Display files names -->
+                    <input matInput  readonly name="name" />
+              
+                    <!-- Browse Button -->
+                    <button mat-flat-button color="primary" class="btn-radius">
+                      Upload Image
+                    </button>
+                  </mat-toolbar>
+              
+                  <!-- Fetch selected filed on change -->
+                  <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" multiple="multiple"
+                    accept="image/*" />
+                </div>
+              </mat-form-field>
+
+                <div class="">
+                    <button mat-raised-button color="primary" class="btn-radius">Post</button>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="" class="post-option">
+                        <mat-icon>public</mat-icon>
+                      </button>
+                      <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                          <mat-icon>public</mat-icon>
+                          <span>Public</span>
+                        </button>
+                        <button mat-menu-item>
+                          <mat-icon>group</mat-icon>
+                          <span>Friends</span>
+                        </button>
+                        <button mat-menu-item>
+                          <mat-icon>notifications_off</mat-icon>
+                          <span>Just me</span>
+                        </button>
+                      </mat-menu>
+                </div>    
+            </div> 
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="example-card btn-radius">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+          <mat-card-actions class="card-action">
+            <button mat-icon-button color="warn" class="action-btn"><mat-icon>favorite</mat-icon>LIKE</button>
+            <button mat-icon-button color="basic" class="action-btn"><mat-icon>share</mat-icon>SHARE</button>
+        </mat-card-actions>
+
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+          <mat-card-actions class="card-action">
+            <button mat-icon-button color="warn" class="action-btn"><mat-icon>favorite</mat-icon>LIKE</button>
+            <button mat-icon-button color="basic" class="action-btn"><mat-icon>share</mat-icon>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="card-action">
+          <button mat-icon-button color="warn" class="action-btn"><mat-icon>favorite</mat-icon>LIKE</button>
+          <button mat-icon-button color="basic" class="action-btn"><mat-icon>share</mat-icon>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+    
+    </mat-tab>
+  </mat-tab-group>
