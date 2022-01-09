@@ -30,6 +30,21 @@ import { OptionsComponent } from './theme/components/options/options.component';
 
 import { InterceptorService } from './theme/utils/interceptor.service';
 
+import {getAuthServiceConfigs } from './socialloginConfig'
+
+// import {
+//   SocialLoginModule,
+//   AuthServiceConfig,
+//   GoogleLoginProvider,
+//   FacebookLoginProvider,
+// } from "angular5-social-login";
+
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
+
 
 @NgModule({
    imports: [
@@ -45,6 +60,7 @@ import { InterceptorService } from './theme/utils/interceptor.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SocialLoginModule
   ],
   declarations: [
     AppComponent,
@@ -63,10 +79,36 @@ import { InterceptorService } from './theme/utils/interceptor.service';
       useClass: InterceptorService,
       multi: true
     },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '420510582996-lneo77v4nclevprk82if7ccgiqcse79m.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('452811966479493')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    },
     AppSettings,
     AppService,   
     { provide: OverlayContainer, useClass: CustomOverlayContainer },
     { provide: MAT_MENU_SCROLL_STRATEGY, useFactory: menuScrollStrategy, deps: [Overlay] },
+    
+    // {
+    //   provide: AuthServiceConfig,
+    //   useFactory: getAuthServiceConfigs
+    // }
     // { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

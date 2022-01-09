@@ -9,6 +9,7 @@ import { CommonService } from "../../theme/utils/common.service";
   styleUrls: ["./feeds.component.scss"],
 })
 export class FeedsComponent implements OnInit {
+  imageData: any;
   constructor(private commonService: CommonService,
     public formBuilder: FormBuilder,
      public snackBar: MatSnackBar) {}
@@ -36,6 +37,10 @@ export class FeedsComponent implements OnInit {
         this.postList = res.data;
         this.postList.forEach((element) => {
           element["isLoadComment"] = false;
+          if(element.image != "") {
+            element["image"] = 'data:image/png;base64,' + element.image
+          }
+         
         });
 
         // this.postList.sort((a,b) => a.dCreatedDate.localeCompare(b.dCreatedDate));
@@ -73,16 +78,32 @@ export class FeedsComponent implements OnInit {
   }
 
 newPost() {
-  console.log(this.postData);
-  const data = {
-    text : this.postData,
-    postedUser: this.userData._id
+  console.log("in submit");
+  // console.log(this.postData);
+  console.log(this.userData);
+  
+  let userId;
+  if(this.userData._id) {
+    userId = this.userData._id
+  } else {
+    userId = this.userData.sGoogleId
   }
+  const formData = new FormData();
+  formData.append('avatar',this.imageData)
+  formData.append('text',this.postData)
+  formData.append('postedUser',userId)
+  // const data = {
+  //   text : this.postData,
+  //   postedUser: this.userData._id
+  // }
+
 
   this.commonService
-  .post<any>(post.create, data)
+  .post<any>(post.create, formData)
   .subscribe(
     async (res) => {
+      console.log(res);
+      
       this.getPostList();
     },err=>{
       this.snackBar.open(err.message, '×', { panelClass: 'danger', verticalPosition: 'top', duration: 3000 });
@@ -110,7 +131,7 @@ postComment(i,postId,myComment:HTMLInputElement){
     })
 }
 uploadFileEvt(e) {
-  console.log(e);
-  
+  console.log(e.target.files[0]);
+ this.imageData = e.target.files[0];
 }
 }

@@ -4,12 +4,14 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://feeds-backend-mft.herokuapp.com/api/v1/',
+  // apiUrl: 'https://feeds-backend-mft.herokuapp.com/api/v1/',
+  apiUrl: 'http://localhost:3000/api/v1/',
 };
 
 export const account = {
   register: environment.apiUrl + "users/register",
   login: environment.apiUrl + "users/login",
+  socialLogin: environment.apiUrl + "users/social/login"
 }
 
 export const post = {

@@ -28,6 +28,8 @@
     "@angular/router": "10.0.3",
     "@swimlane/ngx-charts": "14.0.0",
     "angular-in-memory-web-api": "0.11.0",
+    "angular5-social-login": "^1.0.9",
+    "angularx-social-login": "^3.4.1",
     "express": "^4.17.2",
     "ngx-input-file": "8.0.1",
     "ngx-pagination": "5.0.0",
@@ -36,6 +38,7 @@
     "ngx-swiper-wrapper": "9.0.1",
     "path": "^0.12.7",
     "rxjs": "6.6.0",
+    "rxjs-compat": "^6.6.7",
     "tslib": "2.0.0",
     "typescript": "3.9.6",
     "zone.js": "0.10.3"
