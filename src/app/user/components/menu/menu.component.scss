@@ -1,5 +1,9 @@
 @import "../../../theme/styles/mixins";
 
+.ico-color-grey{
+    color: #949a9b;
+}
+
 .menu-expand-icon{
     position: absolute;
     right: 10px;
@@ -15,6 +19,7 @@
         font-weight: 400;
         border-radius: 0;
         .menu-icon{
+            color: #949a9b !important;
             margin-right: 12px;
             padding: 7px;
             border-radius: 50%; 

@@ -15,7 +15,11 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FeedsComponent } from './feeds/feeds.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ChatsComponent } from './chats/chats.component'; 
+import { ChatsComponent } from './chats/chats.component';
+import { FindProfileComponent } from './find-profile/find-profile.component';
+//import { SearchPageComponent } from './searchprofile-detail/searchprofile-detail.component'; 
+
+
 
 export const routes = [ 
   { 
@@ -26,6 +30,8 @@ export const routes = [
       { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
       { path: '', component: FeedsComponent , pathMatch: 'full' },
       { path: 'chats', component: ChatsComponent, pathMatch: 'full' },
+      { path: 'find-profile', component: FindProfileComponent, pathMatch: 'full' },
+     //{ path: 'search-page', component: SearchPageComponent, pathMatch: 'full' },
       // { path: 'sales', loadChildren: () => import('./sales/sales.module').then(m => m.SalesModule) },
       // { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule), data: { breadcrumb: 'Users' } },
       // { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule), data: { breadcrumb: 'Customers' } },
@@ -49,7 +55,9 @@ export const routes = [
     BreadcrumbComponent,
     FeedsComponent,
     ProfileComponent,
-    ChatsComponent
+    ChatsComponent,
+    FindProfileComponent,
+   // SearchprofileDetailComponent
   ],
   imports: [
     CommonModule,

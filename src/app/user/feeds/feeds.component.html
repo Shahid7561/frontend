@@ -1,11 +1,11 @@
 
-      <mat-card class="card-start btn-radius">
+      <mat-card class="card-start btn-radius box-shade">
         <mat-card-content>
           
-            <div fxFlex="100" class="px-1">
+            <div fxFlex="100" class="px-1 box-shade box-radius">
               <!-- <form [formGroup]="feedsForm"> -->
 
-                <mat-form-field appearance="outline" class="w-100">
+                <mat-form-field appearance="outline" class="w-100 ">
                     <input matInput   [(ngModel)]="postData"   placeholder="What are you thinking?">
                   </mat-form-field>
 
@@ -15,7 +15,7 @@
                         <input matInput  readonly name="name" />
                   
                         <!-- Browse Button -->
-                        <button mat-flat-button color="primary" class="btn-radius">
+                        <button mat-raised-button class=" btn-style-pri-img">
                           Select Image
                         </button>
                       </mat-toolbar>
@@ -26,9 +26,9 @@
                   </mat-form-field>
 
                 <div class="">
-                    <button (click)="newPost()" mat-raised-button color="primary" class="btn-radius">Post</button>
+                    <button (click)="newPost()" mat-raised-button class=" btn-style-pri">Post</button>
                     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="" class="post-option">
-                        <mat-icon>public</mat-icon>
+                        <mat-icon class="ico-color-grey">public</mat-icon>
                       </button>
                       <mat-menu #menu="matMenu">
                         <button mat-menu-item>
@@ -52,7 +52,7 @@
 
       
 
-      <mat-card class="card-start btn-radius" *ngFor="let post of postList; let i = index">
+      <mat-card class="card-start btn-radius box-shade" *ngFor="let post of postList; let i = index">
         <mat-card-header class="card-header">
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{post.user.name}} {{post.user.lastName}}</mat-card-title>
@@ -87,14 +87,14 @@
               <button mat-icon-button color="warn" class="action-btn"><mat-icon>favorite</mat-icon>LIKE</button>
               <button mat-icon-button color="basic" class="action-btn"><mat-icon>share</mat-icon>SHARE</button>
               
-                <div class="comment-section">
+                <div class="comment-section box-shade">
                   <!-- <div class="comment-text"> -->
                     <mat-form-field appearance="legacy" class="w-100 ">
                       <mat-label>Write a comment...</mat-label>
                       <input matInput #myComment>
                       </mat-form-field>
                   <!-- </div> -->
-                 <button mat-raised-button color="primary" (click)="postComment(i,post._id,myComment)" class="comment-btn btn-radius">Post</button>
+                 <button mat-raised-button color="primary" (click)="postComment(i,post._id,myComment)" class="comment-btn btn-style-pri">Post</button>
                 </div>
                 <mat-card class="card-start btn-radius">
                   <!-- <mat-card-content> -->

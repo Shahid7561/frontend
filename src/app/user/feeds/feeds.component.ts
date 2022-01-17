@@ -133,5 +133,7 @@ postComment(i,postId,myComment:HTMLInputElement){
 uploadFileEvt(e) {
   console.log(e.target.files[0]);
  this.imageData = e.target.files[0];
+ console.log(this.imageData);
 }
+
 }

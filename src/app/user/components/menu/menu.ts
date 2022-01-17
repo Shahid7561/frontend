@@ -4,6 +4,9 @@ export const menuItems = [
     new Menu (10, 'Feeds', '/users/feeds', null, 'dashboard', null, false, 0),
    new Menu (70, 'Profile', '/users/profile', null, 'person', null, false, 0),
    new Menu (120, 'Chats', '/user/chats', null, 'insert_comment', null, false, 0), 
+   new Menu (120, 'find', '/users/find-profile', null, 'insert_comment', null, false, 0), 
+   new Menu (120, 'Searched Profile', '/search-page', null, 'insert_comment', null, false, 0), 
+  
     // new Menu (22, 'Products List', '/admin/products/product-list', null, 'list', null, false, 20), 
     // new Menu (23, 'Product Detail', '/admin/products/product-detail', null, 'remove_red_eye', null, false, 20),  
     // new Menu (24, 'Add Product', '/admin/products/add-product', null, 'add_circle_outline', null, false, 20), 

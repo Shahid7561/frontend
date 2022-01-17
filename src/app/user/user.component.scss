@@ -57,8 +57,18 @@
             transition: 0.3s;
             &.show{
                padding: 0 8px;
-               width: 250px;
+             width: 100vh;
             }
         }       
     }
 }
+
+.ico-color-grey{
+    color: #949a9b !important;
+}
+
+.toolbar-color-white{
+    background-color: #fff !important;
+    color: rgb(71, 70, 70);
+}
+

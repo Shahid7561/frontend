@@ -1,0 +1,191 @@
+
+.container{
+     //background-color: rgb(127, 218, 187);
+    // border: 2px solid black ;
+    // border-radius: 25px;
+    //width: 50%;
+    //border: 3px solid #fff;
+   // padding: 20px;
+    display: flex;
+}
+.cover-pic{
+    width: 100% !important;
+    height: inherit;
+    display: block;
+}
+    
+.cover-image{
+    border-radius: 15px !important;
+    overflow: hidden;
+    height: 350px;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 10px 9px #d5d5d5 !important;
+    
+    position: relative!important;
+    
+    max-width: 100%; 
+    // height: inherit !important; 
+        
+}
+
+.cover-details{
+    justify-content: flex-start!important;
+    position: relative!important;
+    align-items: center;
+    display: flex;
+}
+
+.image-conatiner{
+
+}
+
+
+// .image-shadow{
+//     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+// }
+
+.profile-pic{
+    position:absolute;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #111;
+    top: -60%;
+    left: 37px;
+    border: none !important;
+}
+
+.profile-detail-conatiner{
+    margin-left: 12.5rem !important;
+    //margin-left: 12.5rem !important;
+    padding: 15px 25px 25px 15px;
+}
+
+.name-text{
+    color: #6D6B6B;
+    font-weight: bolder;
+    text-transform: uppercase!important;
+}
+.desig-text{
+    color: #6D6B6B;
+    font-weight: bolder;
+}
+.my-posts{
+    font-size: 16px !important;
+    margin-right: 1rem;
+    color: #000;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.container-row-2{
+    // background-color: lavender;
+    // border: 1px solid black;
+    // border-radius: 30px;
+    width: 50%;
+}
+.post-display{
+ 
+}
+
+.display-btn{
+    border-radius: 50px;
+    border: grey 2px ;
+    cursor: pointer;
+    text-align: center!important;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    font-size: 20px;
+    margin: 4rem 5rem 4rem 15rem;
+    padding: 8px;
+    background-color: #ffed9b;
+}
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.cols{
+    flex: 1;
+    // border: 2px solid red;
+    border-radius: 25px;
+}
+
+.cols:first-child {
+    margin-right: 20px;
+} 
+
+.endorse-btn{
+    background-color: #ffed9b !important;
+    color: #000 !important;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.refer-btn{
+    padding: 2px 4px 2px 4px;
+    margin: 3rem;
+    width: 25%;
+    float: right;
+    background-color: #ffed9b !important;
+    color: #000 !important;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.fav-btn{
+    background-color: #ffed9b !important;
+    color: #000 !important;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.follow-btn{
+    background-color: #ffed9b !important;
+    color: #000 !important;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.card-title{
+    font-size: 18px;
+    color: gray;
+}
+
+.card-sub{
+    color: gray;
+    font-size: 15px;
+    margin:12rem;
+}
+
+.followers-text{
+    color: gray;
+    margin: 2rem;
+    align-content: center;
+}
+
+.rounded-circle {
+    border-radius: 50%!important;
+    vertical-align: middle;
+}
+
+.follower-list{
+    padding: 6px !important;
+
+}
+
+.ico-btn{
+    float: right;
+}
+
+.chat-ico{
+    background-color: white !important;
+    color: gray;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.card-border{
+    border-radius: 50px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,126 @@
+
+  <div class="container">
+
+    <div class="cols">
+
+        <div class="cover-image">
+            <img src="/assets/images/carousel/s1banner.png" alt="" class="cover-pic">
+        </div>
+    
+        <div class="cover-details">
+                <div class="image-conatiner">
+                        <img src="/assets/images/profile/michael.jpg" alt="" class="profile-pic">
+                </div>
+
+                <div class="profile-detail-conatiner">  
+                    <div class="name-text">
+                        <h1>Michael Jones</h1>
+                    </div>
+
+                    <div class="desig-text">
+                        <h3>Not mentioned</h3>
+                    </div>
+                </div>    
+          </div>
+
+            <div class="my-posts">
+                <h3>MY POSTS</h3>
+            </div>
+            
+            <div class="post-display">
+                <button class="display-btn">No Post Yet !</button>
+            </div>
+    
+    </div>
+    
+    <div class="cols">
+        <mat-card class="card-border">
+            <mat-card-actions>
+                <button mat-button class="endorse-btn">Endorse</button>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="" class="post-option">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <span>Endorsements</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>NO endorsements yet!</span>
+                    </button>
+                  </mat-menu>
+                <button mat-button class="fav-btn">Favourite</button>
+                <button mat-button class="follow-btn">Follow</button>
+
+                <div class="ico-btn">
+                    <button mat-icon-button [matMenuTriggerFor]="followers">
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
+                      <mat-menu #followers="matMenu">
+                        <span class="followers-text"> Followers</span>
+                        <button mat-menu-item>
+                            <img class="rounded-circle" src="/assets/images/profile/julia.jpg" width="20" height="20" alt="">
+                          <span class="follower-list">Julia</span>
+                        </button>
+                        <button mat-menu-item>
+                            <img class="rounded-circle" src="/assets/images/profile/tereza.jpg" width="20" height="20" alt="">
+                          <span class="follower-list">Tereza</span>
+                        </button>
+                      </mat-menu>  
+                        <button mat-mini-fab class="chat-ico">
+                          <mat-icon >chat</mat-icon>
+                        </button>
+                </div>
+
+      
+                  
+              </mat-card-actions>
+
+              <mat-card class="card-border">
+                <mat-card-title>
+                   <span class="card-title">Best Works :</span> 
+                   <span class="card-sub">Not Mentioned</span>
+                    </mat-card-title>
+              </mat-card>
+              
+              <mat-card class="card-border">
+                <mat-card-title >
+                   <span class="card-title">Work Links :</span> 
+                   <span class="card-sub">Not Mentioned</span>
+                    </mat-card-title>
+              </mat-card>
+              
+              <mat-card class="card-border">
+                <mat-card-title >
+                    <span class="card-title">Experience :</span> 
+                    <span class="card-sub">Not Mentioned</span>
+                    </mat-card-title>
+              </mat-card>
+              
+              <mat-card class="card-border">
+                <mat-card-title >
+                    <span class="card-title">Referrals :</span> 
+                    <span class="card-sub">Not Mentioned</span>
+                    </mat-card-title>
+              </mat-card>
+              
+              <mat-card class="card-border">
+                <mat-card-title >
+                    <span class="card-title">Fees Range :</span> 
+                    <span class="card-sub">Not Mentioned</span>
+                    </mat-card-title>
+              </mat-card>
+              
+              <mat-card class="card-border">
+                <mat-card-title >
+                    <span class="card-title">Location :</span> 
+                    <span class="card-sub">Not Mentioned</span>
+                    </mat-card-title>
+              </mat-card>
+              
+              <button mat-button class="refer-btn">Refer</button>
+            </mat-card>
+        </div>
+        
+    </div>
+    
+    

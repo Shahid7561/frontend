@@ -44,7 +44,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
    imports: [
@@ -71,7 +71,8 @@ import {
     SidenavMenuComponent,
     BreadcrumbComponent,
     OptionsComponent,
-    // FooterComponent    
+    SearchPageComponent,
+     // FooterComponent    
   ], 
   providers: [
     {
