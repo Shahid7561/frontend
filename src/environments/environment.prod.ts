@@ -6,6 +6,7 @@ export const environment = {
 export const account = {
   register: environment.apiUrl + "users/register",
   login: environment.apiUrl + "users/login",
+  socialLogin: environment.apiUrl + "users/social/login"
 }
 
 export const post = {
