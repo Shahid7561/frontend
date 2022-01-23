@@ -1,14 +1,14 @@
 
 
     <div class="search-container">
-    <div class="card">
+    <div *ngFor="let item of searchData" class="card">
         <a href="" class="profile">
             <div class="profile-img">
                 <img src="" alt="" class="search-pro-img">
             </div>
             <div class="profile-name">
                 <span class="search-pro-name">
-                    Farhan Memon
+                    {{item.name}}
                 </span>
             </div>
         </a>
@@ -37,7 +37,7 @@
        
 
             <div class="view-pro-row">
-            <button mat-raised-button color="basic" class="viewPro-btn">View Profile</button>
+            <button (click)="viewProfile(item._id)" mat-raised-button color="basic" class="viewPro-btn">View Profile</button>
             </div>
         </div>
     </div>
@@ -46,88 +46,4 @@
     
 
 
-    <div class="search-container">
-        <div class="card">
-            <a href="" class="profile">
-                <div class="profile-img">
-                    <img src="" alt="" class="search-pro-img">
-                </div>
-                <div class="profile-name">
-                    <span class="search-pro-name">
-                        Farhan Memon
-                    </span>
-                </div>
-            </a>
     
-            <div class="contact-search">
-    
-                <div class="ico-row">
-                    <div class="msg">
-                        <button mat-icon-button color="basic"  class="hover-btn">
-                            <mat-icon>message</mat-icon>
-                      </button>
-                        <!-- <p>Message</p> -->
-                    </div>
-                   
-                   
-                    <div class="fav">
-                        <button mat-icon-button color="basic" class="hover-btn" >
-                            <mat-icon>favorite</mat-icon>
-                        </button>
-     
-                    <!-- <p>Favorite</p> -->
-                </div>
-                </div>
-               
-               
-           
-    
-                <div class="view-pro-row">
-                <button mat-raised-button color="basic" class="viewPro-btn">View Profile</button>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="search-container">
-            <div class="card">
-                <a href="" class="profile">
-                    <div class="profile-img">
-                        <img src="" alt="" class="search-pro-img">
-                    </div>
-                    <div class="profile-name">
-                        <span class="search-pro-name">
-                            Farhan Memon
-                        </span>
-                    </div>
-                </a>
-        
-                <div class="contact-search">
-        
-                    <div class="ico-row">
-                        <div class="msg">
-                            <button mat-icon-button color="basic"  class="hover-btn">
-                                <mat-icon>message</mat-icon>
-                          </button>
-                            <!-- <p>Message</p> -->
-                        </div>
-                       
-                       
-                        <div class="fav">
-                            <button mat-icon-button color="basic" class="hover-btn" >
-                                <mat-icon>favorite</mat-icon>
-                            </button>
-         
-                        <!-- <p>Favorite</p> -->
-                    </div>
-                    </div>
-                   
-                   
-               
-        
-                    <div class="view-pro-row">
-                    <button mat-raised-button color="basic" class="viewPro-btn">View Profile</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-            

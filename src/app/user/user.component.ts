@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { AppSettings, Settings } from '../app.settings';
 import { Router, NavigationEnd } from '@angular/router'; 
 import { MenuService } from './components/menu/menu.service';
+import { CommonService } from '../theme/utils/common.service';
 
 @Component({
   selector: 'app-user',
@@ -15,6 +16,7 @@ export class UserComponent implements OnInit {
   public menuItems:Array<any>;
   public toggleSearchBar:boolean = false;
   constructor(public appSettings:AppSettings, 
+    private commonService: CommonService,
               public router:Router,
               private menuService: MenuService){        
     this.settings = this.appSettings.settings;
@@ -87,6 +89,22 @@ export class UserComponent implements OnInit {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     this.router.navigate(['/sign-in']);
+  }
+
+  onSearchChange(str){
+    // console.log(str);
+    // console.log(this.router.url);
+    if(str.length > 1) {
+      this.commonService.AClicked(str);
+      if(this.router.url != '/users/find-profile') {
+        this.router.navigate(['/users/find-profile']);
+        
+      } else {
+        // this.commonService.AClicked(str);
+      }
+      
+
+    }
   }
 
 }

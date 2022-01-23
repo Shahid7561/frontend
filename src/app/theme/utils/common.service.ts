@@ -1,13 +1,17 @@
 // angular packages
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService {
 
+export class CommonService {
+  @Output() aClickedEvent = new EventEmitter<string>();
+  AClicked(msg: string) {
+    this.aClickedEvent.emit(msg);
+  }
   constructor(private http: HttpClient) { }
 
   public get<T>(apiPath): Observable<T> {
